@@ -1,5 +1,6 @@
 import React, { ReactElement, useEffect } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
+import AddInput from '../../components/addInput/AddInput';
 import CardContainer from '../../components/cardConatiner/CardContainer';
 import { todoState } from '../../recoil/todo';
 
@@ -14,6 +15,7 @@ export default function Main({}: MainProps) {
 
   return (
     <section className='todo_section'>
+      <AddInput onClickAddButton={setTodoList} todoList={todoList} />
       <CardContainer {...CardContainerProps} />
     </section>
   );
